@@ -1,0 +1,2161 @@
+//#include <iostream>
+//using namespace std;
+//#include "DrawEngine.h"
+//#include "Board.h"
+//#include "headers.h"
+//#include <conio.h>
+//using namespace sf;
+
+
+    //Board gameBoard;
+
+    //set the co-ordinates of the points of the board
+//    int i = 1;
+//    for (int j = 0; j < 5; j++)
+//    {
+//        for (int k = 0; k < 5; k++)
+//        {
+//            gameBoard.point[i].SetX(boardX + k * boardWidth/4);
+//            gameBoard.point[i].SetY(boardY + j * boardHeight/4);
+//            i++;
+//        }
+//    }
+
+
+
+//    Sprite Goat[20];
+//
+//    for (i = 0; i < 20; i++)
+//    {
+//        Goat[i].SetImage(goatimg);
+//    }
+//
+//    Sprite Tiger[4];
+//
+//    for (i = 0; i < 4; i++)
+//    {
+//        Tiger[i].SetImage(tigerimg);
+//    }
+
+    //Sprite Background(backgroundimg);
+
+
+
+
+//    Tiger[0].Move(boardX - tigerWidth/2, boardY - tigerHeight/2);
+//    Tiger[1].Move(boardX + boardWidth - tigerWidth/2, boardY - tigerHeight/2);
+//    Tiger[2].Move(boardX - tigerWidth/2, boardY +boardHeight - tigerHeight/2);
+//    Tiger[3].Move(boardX + boardWidth- tigerWidth/2, boardY + boardHeight- tigerHeight/2);
+//
+//    Goat[1].Move(boardX+boardWidth/4-goatWidth/2, boardY-goatHeight/2);
+
+
+
+
+
+
+
+//    while (App.IsOpened())
+//    {
+//        // Handle events
+//        Event Event;
+//        while (App.GetEvent(Event))
+//        {
+//            // Window closed or escape key pressed : exit
+//            if ((Event.Type == Event::Closed) ||
+//               ((Event.Type == Event::KeyPressed) && (Event.Key.Code == Key::Escape)))
+//            {
+//                App.Close();
+//                break;
+//            }
+//        }
+//
+//        if (isPlaying)
+//        {
+//            // Update the Timer
+//            if (AITimer.GetElapsedTime() > AITime)
+//            {
+//                if (keyPressed)
+//                {
+//                    keyPressed = false;
+//                }
+//                AITimer.Reset();
+//            }
+//
+//            // Move the tiger
+//            if ((Event.Type == Event::KeyPressed) && (Event.Key.Code == Key::Up) && (Selector.GetPosition().y > (boardY - selectorHeight/4)) && !keyPressed)
+//            {
+//                //App.Draw(Selector);
+//                Selector.Move(0, -boardHeight/4);
+//                keyPressed = true;
+//                AITimer.Reset();
+//
+//            }
+//            if ((Event.Type == Event::KeyPressed) && (Event.Key.Code == Key::Down) && (Selector.GetPosition().y < (boardY + boardHeight - selectorHeight)) && !keyPressed)
+//            {
+//                Selector.Move(0, boardHeight/4);
+//                keyPressed = true;
+//                AITimer.Reset();
+//                //App.Draw(Selector);
+//            }
+//
+//            if ((Event.Type == Event::KeyPressed) && (Event.Key.Code == Key::Left) && (Selector.GetPosition().x > (boardX - selectorWidth/4)) && !keyPressed)
+//            {
+//                Selector.Move(-boardHeight/4, 0);
+//                keyPressed = true;
+//                AITimer.Reset();
+//                //App.Draw(Selector);
+//            }
+//            if ((Event.Type == Event::KeyPressed) && (Event.Key.Code == Key::Right) && (Selector.GetPosition().x < (boardX + boardWidth - selectorWidth)) && !keyPressed)
+//            {
+//                Selector.Move(boardHeight/4, 0);
+//                keyPressed = true;
+//                AITimer.Reset();
+//                //App.Draw(Selector);
+//            }
+//
+//            if ((Event.Type == Event::KeyPressed) && (Event.Key.Code == Key::W))
+//            {
+//                int x, y;
+//                x = Selector.GetPosition().x;
+//                y = Selector.GetPosition().y;
+//
+//                Selector.Move(140, 80);
+//
+//                keyPressed = true;
+//                //AITimer.Reset();
+//                //App.Draw(Selector);
+//            }
+//
+//        }
+//
+//        // Clear the window
+//        App.Clear();
+//
+//        // Draw the background, goats, tigers and board
+//        App.Draw(Background);
+//        App.Draw(Board);
+//
+//        App.Draw(Goat[1]);
+//
+//
+//        for (i = 0; i < 4; i++)
+//        {
+//            App.Draw(Tiger[i]);
+//        }
+//
+//        App.Draw(Selector);
+
+
+//        //draw the board
+//        App.Draw(Shape::Line(boardX, boardY, boardX, boardY+boardHeight, 5, Color::White)); //|
+//        App.Draw(Shape::Line(boardX, boardY, boardX+boardWidth, boardY, 5, Color::White)); // ---
+//        App.Draw(Shape::Line(boardX+boardWidth, boardY, boardX+boardWidth, boardY+boardHeight, 5, Color::White)); //  |
+//        App.Draw(Shape::Line(boardX, boardY+boardHeight, boardX+boardWidth, boardY+boardHeight, 5, Color::White)); //___
+//
+//        App.Draw(Shape::Line(boardX+boardWidth/4, boardY, boardX+boardWidth/4, boardY+boardHeight, 5, Color::White));
+//        App.Draw(Shape::Line(boardX+boardWidth/2, boardY, boardX+boardWidth/2, boardY+boardHeight, 5, Color::White));
+//        App.Draw(Shape::Line(boardX+boardWidth/4+boardWidth/2, boardY, boardX+boardWidth/4+boardWidth/2, boardY+boardHeight, 5, Color::White));
+//        App.Draw(Shape::Line(boardX, boardY+boardHeight/4, boardX+boardWidth, boardY+boardHeight/4, 5, Color::White));
+//        App.Draw(Shape::Line(boardX, boardY+boardHeight/2, boardX+boardWidth, boardY+boardHeight/2, 5, Color::White));
+//        App.Draw(Shape::Line(boardX, boardY+boardHeight/4+boardHeight/2, boardX+boardWidth, boardY+boardHeight/4+boardHeight/2, 5, Color::White));
+//
+//        App.Draw(Shape::Line(boardX, boardY, boardX+boardWidth, boardY+boardHeight, 5, Color::White));
+//        App.Draw(Shape::Line(boardX+boardWidth, boardY, boardX, boardY+boardHeight, 5, Color::White));
+//
+//        App.Draw(Shape::Line(boardX+boardWidth/2, boardY, boardX, boardY+boardHeight/2, 5, Color::White));
+//        App.Draw(Shape::Line(boardX, boardY+boardHeight/2, boardX+boardWidth/2, boardY+boardHeight, 5, Color::White));
+//        App.Draw(Shape::Line(boardX+boardWidth/2, boardY+boardHeight, boardX+boardWidth, boardY+boardHeight/2, 5, Color::White));
+//        App.Draw(Shape::Line(boardX+boardWidth, boardY+boardHeight/2, boardX+boardWidth/2, boardY, 5, Color::White));
+
+
+
+////         If the game is over, display the end message
+//        if (!isPlaying)
+//            App.Draw(End);
+//
+//         Display things on screen
+//        App.Display();
+//    }
+
+//    return EXIT_SUCCESS;
+//}
+
+
+
+
+from int MyPoint::SetState(State inputState)
+//    Image goatimg, tigerimg, emptyimg;
+//
+//    if(!tigerimg.LoadFromFile("images/tiger.png") ||
+//       !goatimg.LoadFromFile("images/goat.png") ||
+//       !emptyimg.LoadFromFile("images/empty.png")
+//       )
+//    {
+//        return EXIT_FAILURE;
+//    }
+//
+//    switch (state)
+//    {
+//        case N:
+//            pnt.SetImage(emptyimg);
+//            //App.Draw(pnt);
+//            break;
+//
+//        case T:
+//            pnt.SetImage(tigerimg);
+//            //pnt.Move(pnt.GetPosition().x - tigerWidth/2, pnt.GetPosition().y - tigerHeight/2);
+//            //App.Draw(pnt);
+//            break;
+//
+//        case G:
+//            pnt.SetImage(goatimg);
+//            //App.Draw(pnt);
+//    }
+
+
+commented code:
+//            App.Draw(Shape::Line(float(point[x].GetX() - 55),
+//                                 float(point[x].GetY() - 55),
+//                                 float(point[x].GetX() + 55),
+//                                 float(point[x].GetY() - 55),
+//                                 5, Color::Yellow));
+//
+//             App.Draw(Shape::Line(float(point[x].GetX() - 55),
+//                                 float(point[x].GetY() - 55),
+//                                 float(point[x].GetX() - 55),
+//                                 float(point[x].GetY() + 55),
+//                                 5, Color::Yellow));
+//
+//             App.Draw(Shape::Line(float(point[x].GetX() - 55),
+//                                 float(point[x].GetY() + 55),
+//                                 float(point[x].GetX() + 55),
+//                                 float(point[x].GetY() + 55),
+//                                 5, Color::Yellow));
+//
+//             App.Draw(Shape::Line(float(point[x].GetX() + 55),
+//                                 float(point[x].GetY() - 55),
+//                                 float(point[x].GetX() + 55),
+//                                 float(point[x].GetY() + 55),
+//                                 5, Color::Yellow));
+            
+        
+//        if (hasmoved == true)
+//        {
+//            point[1].SetState(T);
+//            point[2].SetState(N);
+//            hasmoved = false;
+//        }
+//
+//        else
+//        {
+//            point[1].SetState(N);
+//            point[2].SetState(T);
+//            hasmoved = true;
+//        }
+
+
+//This is done in the setstate function
+//    for (int k = 1; k < 26; k++)
+//    {
+//        point[k].drawn = false;
+//    }
+
+if (point[highlightPoint].GetState() == T)
+{
+	if (point[selectorPoint].GetState() == N)
+	{
+		
+	}
+}
+
+instead of
+
+
+//    switch (point[highlightPoint].GetState())
+//    {
+//        case T:
+//            if (point[selectorPoint].GetState() == N)
+//            {
+//                if (
+//                        //horizontal and vertical motion
+//                        (selectorPoint == highlightPoint + 1 ||
+//                        selectorPoint == highlightPoint - 1 ||
+//                        selectorPoint == highlightPoint + 5 ||
+//                        selectorPoint == highlightPoint - 5)
+//
+//                    ||
+//                    //diagonal motion
+//
+//                        (selectorPoint % 2 !=0 &&
+//                            (selectorPoint == highlightPoint - 6 ||
+//                             selectorPoint == highlightPoint + 6 ||
+//                             selectorPoint == highlightPoint - 4 ||
+//                             selectorPoint == highlightPoint + 4
+//                            )
+//                        )
+//                    )
+//                //if condition ends, statements begin
+//                {
+//                    point[selectorPoint].SetState(T);
+//                    point[highlightPoint].SetState(N);
+//                }
+//                break;
+//            }
+//    }
+
+if  (
+		(
+		//horizontal and vertical
+		abs(selectorPoint - highlightPoint) == 2 ||
+		abs(selectorPoint - highlightPoint) == 10 ||
+		
+		//diagonal
+		abs(selectorPoint - highlightPoint) == 12 ||
+		abs(selectorPoint - highlightPoint) == 8
+		)
+		
+		&&
+		
+		(point[abs((selectorPoint - highlightPoint) / 2)].GetState() == G)
+	)
+	
+	{
+		
+	}
+	
+	
+	instead of 
+	
+	
+	if (
+                            //horizontal and vertical motion
+                            (
+                             
+                            ((selectorPoint == highlightPoint + 2) && (point[selectorPoint + 1].GetState() == G)) ||
+                            ((selectorPoint == highlightPoint - 2) && (point[selectorPoint - 1].GetState() == G)) ||
+                            ((selectorPoint == highlightPoint + 10) && (point[selectorPoint + 5].GetState() == G)) ||
+                            ((selectorPoint == highlightPoint - 10) && (point[selectorPoint - 5].GetState() == G))
+                            
+                            )
+
+                        ||
+                        //diagonal motion                            
+                            (
+                             
+                            ((selectorPoint == highlightPoint + 12) && (point[selectorPoint + 6].GetState() == G)) ||
+                            ((selectorPoint == highlightPoint - 12) && (point[selectorPoint - 6].GetState() == G)) ||
+                            ((selectorPoint == highlightPoint + 8) && (point[selectorPoint + 4].GetState() == G)) ||
+                            ((selectorPoint == highlightPoint - 8) && (point[selectorPoint - 4].GetState() == G))
+                            
+                            )
+                        )
+                        
+                        {
+                            point[selectorPoint].SetState(T);
+                            point[highlightPoint].SetState(N);
+                            point[abs((highlightPoint - selectorPoint) / 2)].SetState(N);                            
+                        }
+						
+						
+						
+						
+						if (
+            //horizontal and vertical motion
+            (m == n + 1 ||
+            m == n - 1 ||
+            m == n + 5 ||
+            m == n - 5)
+
+        ||
+        //diagonal motion
+
+            (m % 2 !=0  &&
+                (m == n - 6 ||
+                 m == n + 6 ||
+                 m == n - 4 ||
+                 m == n + 4
+                )
+            )
+        )
+		
+		if (IsMovable(i + 1, i) !! CanCapture(i + 2, i))
+		
+		
+		
+		
+		if (//all conditions
+                (//horizontal conditions
+                    (//left edge
+                        a > (boardX - selectorWidth/2)//to allow a slight area outside the board to represent points
+                     )//left edge
+                    &&
+                    (//right edge
+                        a < (boardX + boardWidth + selectorWidth/2)
+                     )//right edge
+                 )//horizontal conditions
+              && (//vertical conditions
+                    (//top edge
+                        b > (boardY - selectorHeight/2)
+                     )//top edge
+                   && 
+                   (//bottom edge
+                        b < (boardY + boardHeight + selectorHeight/2)
+                    )//bottom edge
+                  )//vertical conditions
+            )//all conditions
+            
+        {//statements begin
+            for (int i = 1; i < 26; i++)
+            {
+                //find the point which has the minimum distance with the clicked point and set it as clickPoint
+                if (sqrt(pow(a - point[i].GetX() , 2) + pow(b - point[i].GetY() , 2)) < temp)
+                {
+                    clickPoint = i;
+                    temp = sqrt(pow(a - point[i].GetX() , 2) + pow(b - point[i].GetY() , 2));
+                }
+            }
+            
+            //move the selector to the clicked point and set it as the new selector point
+            Selector.Move(point[clickPoint].GetX() - point[selectorPoint].GetX(), point[clickPoint].GetY() - point[selectorPoint].GetY());
+            selectorPoint = clickPoint;
+            
+            keyPressed = true;
+            AITimer.Reset();
+        }
+        
+         //if a point ouside the board is clicked
+        else
+        {
+            selectPressed = false;
+            highlightIsDrawn = false;
+        }
+
+		
+		//kludge
+		
+		//    if (
+//            //horizontal and vertical motion
+//            (
+//                (
+//                (abs(m - n) == 1) //horizontal
+//                &&
+//                //this prevents the movement from 5 to 6, 6 to 5 etc.
+//                !(
+//                    (
+//                        (m % 5 == 0) && (n % 5 == 1)//if it's trying to move from the left edge to the right edge(n is highlight)
+//                    )
+//                    ||
+//                    (
+//                        (m % 5 == 1) && (n % 5 == 0)//if it's trying to move from the right edge to the left edge
+//                    )
+//                  )
+//                 )
+//              ||
+//                 (abs(m - n) == 5) //vertical
+//             )
+//
+//        ||
+//        //diagonal motion
+//
+//            (
+//                (m % 2 !=0)//can't move diagonally from even points
+//                &&
+//                (
+//                    (
+//                        (abs(m - n) == 6)//positive slope diagonal
+//                        &&
+//                        !(
+//                            ((m % 5 == 0)&&(n % 5 == 1))//if it's trying to move from the left edge to the right edge diagonally
+//                             ||
+//                             ((m % 5 == 1)&&(n % 5 == 0))//if it's trying to move from the right edge to the left edge diagonally
+//                          )
+//                     )
+//                 ||
+//                    (
+//                        (abs(m - n) == 4)//negative slope diagonal
+//                        &&
+//                        !(
+//                            ((m % 5 == 0)&&(n % 5 == 1))
+//                            ||
+//                             ((m % 5 == 1)&&(n % 5 == 0))
+//                          )
+//                     )
+//                 )
+//            )
+//        )
+    //if condition ends, statements begin
+
+	
+	
+//    //if possible, use IsMovable() function here as well
+//    if(//main condition start
+//        (//horizontal,vertical and diagonal capture start
+//          (//horizontal and vertical capture start
+//            (//horizontal capture start
+//                (abs(m - n) == 2)
+//                &&
+//                //this prevents the capture from 4 to 6, 6 to 4 etc.
+//                !(//exceptions
+//                    (//exception 1
+//                        (
+//                            (m % 5 == 2) && (n % 5 == 0)
+//                        )
+//                       ||
+//                        (
+//                            (m % 5 == 0) && (n % 5 == 2)
+//                        )
+//                     )//exception 1
+//                    ||
+//                    (//exception 2
+//                        (
+//                            (m % 5 == 4) && (n % 5 == 1)
+//                        )
+//                       ||
+//                        (
+//                            (m % 5 == 1) && (n % 5 == 4)
+//                        )
+//                     )//exxception 2
+//                  )//exceptions
+//            )//horizontal capture end
+//
+//          ||
+//             //vertical capture
+//            (abs(m - n) == 10)
+//         )//horizontal and vertical capture end
+//
+//      ||
+//
+//         (//diagonal capture start
+//            (m % 2 != 0) //prevents capture from even points
+//             &&
+//             (//both signed slopes start
+//                (//negative slope diagonal start
+//                    (abs(m - n) == 12)
+//                    &&
+//                    !(//exceptions
+//                            ((m % 5 == 0)&&(n % 5 == 1))//probably not needed but does no harm
+//                            ||
+//                            ((m % 5 == 1)&&(n % 5 == 0))//probably not needed but does no harm
+//                            ||
+//                            ((m % 5 == 1)&&(n % 5 == 4))
+//                            ||
+//                            ((m % 5 == 4)&&(n % 5 == 1))
+//                            ||
+//                            ((m % 5 == 2)&&(n % 5 == 0))
+//                            ||
+//                            ((m % 5 == 0)&&(n % 5 == 2))
+//                     )//exceptions
+//                 )//negative slope diagonal end
+//            ||
+//
+//                (//positive slope diagonal start
+//                    (abs(m - n) == 8)
+//                    &&
+//                    !(//exceptions
+//                            ((m % 5 == 0)&&(n % 5 == 1))//probably not needed but does no harm
+//                            ||
+//                            ((m % 5 == 1)&&(n % 5 == 0))//probably not needed but does no harm
+//                            ||
+//                            ((m % 5 == 2)&&(n % 5 == 0))
+//                            ||
+//                            ((m % 5 == 0)&&(n % 5 == 2))
+//                            ||
+//                            ((m % 5 == 1)&&(n % 5 == 4))
+//                            ||
+//                            ((m % 5 == 4)&&(n % 5 == 1))
+//                      )//exceptions
+//                    )//positive slope diagonal end
+//                )//both signed slopes end
+//            )//diagonal capture end
+//        )//horizontal,vertical and diagonal capture end
+//
+//            &&
+//            (point[abs((m + n) / 2)].GetState() == G)
+//    )//main condition end
+
+
+//checks if the tigers or goats have won and ends the game if the conditions are fulfilled
+void Game::WinCheck()
+{
+    if (deadGoats == 5)
+    {
+        isPlaying = false;
+        winner = Tiger;
+    }
+
+    else if(!CanTigersMove())
+    {
+        isPlaying = false;
+        winner = Goat;
+    }
+}
+
+
+//
+//MyPlayer::MyPlayer(Board & b)
+//{
+//    board = b;
+//}
+
+//void MyPlayer::SetParams(Board & b, int & g, int & dg, int & h, int & s, bool & d, Player & t, Sprites & spr, bool & i, Player & w)
+//{
+//    board = b;
+//    goatNum = g;
+//    deadGoats = dg;
+//    highlightPoint = h;
+//    selectorPoint = s;
+//    drawValidMove = d;
+//    turn = t;
+//    sprites = spr;
+//    isPlaying = i;
+//    winner = w;
+//}
+
+//    Board & board;
+//    int & goatNum;
+//    int & deadGoats;
+//    int & highlightPoint;
+//    int & selectorPoint;
+//    bool & drawValidMove;
+//    bool & isPlaying;
+//    Player & winner;
+//
+//    Player & turn;
+//    Sprites & sprites;
+
+
+//    bool flags->isPlaying; //To check if the game if over.
+//    bool keyPressed; //Combined with TimerUpdate(), it is used to keep the speed of the GetInput() function manageably low.
+//    bool flags.selectPressed;
+//    bool flags.highlightIsDrawn;
+//    bool flags.drawValidMove;
+
+//    Player flags.turn;//checks the flags.turn
+//    Player flags.winner;//To store the flags.winner in wincheck function, and display it after flags->isPlaying is false
+
+
+//    int flags.selectorPoint; //the point at which the selector is currently located.
+//    int flags.highlightPoint; //the point at which the highlight has been drawn.
+//    int flags.goatNum;//number of goats remaining to be placeds
+//    int flags.deadGoats;
+
+
+gamestate class
+ private
+	array to store current board position.
+	pointer to turn
+ public
+	gamestate counter. which gamestate to save in. after 10 it comes back to 1
+	gamestate comparison function which returns a bool(compares if 2 gamestates are same or not)
+	
+algo
+1.first the game state is saved when there are no more goats to place
+2.then everytime a move is attempted the game state is first saved onto the next gscounter
+3.then the gamestate is changed according to the attempted move
+4.then it is checked with all the previous states
+5.if it is repeated then, move is not allowed and the gamestate is reverted to the state in 1. gscounter is reduced.
+6.if it is not repeated, then the move is allowed. the game state is then saved.
+
+1 2 3 4 5 1 2 3 4 5 1 2 3 4 5
+
+//    if (flags->gsCounter == 5)
+//    board->point[13].SetState(gameState[3].boardPos[18]);//to test
+//    else if (flags->gsCounter == 1)
+//    board->point[13].SetState(N);//to test
+
+
+ai notes
+
+need to write a heuristic evaluation function
+flag to set how many plies to search
+what to pass into the minsearch and maxsearch functions.
+
+//enum Direction
+//{
+//    horizontal = 0;
+//    vertical = 1;
+//    posDiagonal = 2;
+//    negDiagonal = 3;
+//}
+
+tiger evaluation function
+
+1. capture goat 1000 --working
+2. fork nearby unprotected goats 500 --semi-working
+3. Move towards nearby unprotected goat 200
+4. Move nearer the nearest corner, if at the corner, try to move to the nearest odd point, else even point 100
+
+goat evaluation function
+
+Placement phase
+1. Start the game from one of the centre points of an edge
+2. Try to put in a middle safe square as opposed to the corner
+3. Try to leave the points adjacent to the edge centre squares alone.
+4. try to occupy all the the corners.
+5. sac a goat for possible ghost goats.
+
+movement phase
+1. safe moves have higher priority.
+2. capture the centre when it is safe
+3. create ghost goats when appropriate
+4. try to force the tigers onto even points as far as possible.
+5. sacrifice a scapegoat when necessary
+
+redkhem@yahoo.com
+
+lastMovePoint = point at which to draw the lastMove sprite
+drawLastMove = bool which tells whether to draw last Move sprite or not.
+
+//    friend class Input;
+//    friend class Sprites;
+//    friend class Text;
+//    friend class MyPlayer;
+//    friend class TigerPlayer;
+//    friend class GoatPlayer;
+
+    //float temp = 1000.0;
+
+//    if (//all conditions
+//            (//horizontal conditions
+//                (//left edge
+//                    a > (boardX - selectorWidth/2)//to allow a slight area outside the board to represent points
+//                 )//left edge
+//                &&
+//                (//right edge
+//                    a < (boardX + boardWidth + selectorWidth/2)
+//                 )//right edge
+//             )//horizontal conditions
+//          && (//vertical conditions
+//                (//top edge
+//                    b > (boardY - selectorHeight/2)
+//                 )//top edge
+//               &&
+//               (//bottom edge
+//                    b < (boardY + boardHeight + selectorHeight/2)
+//                )//bottom edge
+//              )//vertical conditions
+//        )//all conditions
+
+    //{//statements begin
+
+	
+	//            //find the point which has the minimum distance with the clicked point and set it as hoverPoint
+//            if (sqrt(pow(a - board->point[i].GetX() , 2) + pow(b - board->point[i].GetY() , 2)) < temp)
+//            {
+//                hoverPoint = i;
+//                temp = sqrt(pow(a - board->point[i].GetX() , 2) + pow(b - board->point[i].GetY() , 2));
+//            }
+
+
+
+directions 4. 
+
+for (int k = 0; k < 4; k++)
+        {
+            if ((tigerPos[i]+direction[k] < 26) && (tigerPlayer->IsMovable(tigerPos[i]+direction[k], tigerPos[i])))
+            {
+                tigerPlayer->TigerLogic(tigerPos[i]+direction[k], tigerPos[i]);
+                tigerPos[i] = tigerPos[i]+direction[k];
+                return true;
+            }
+
+            if ((tigerPos[i]-direction[k] > 0) && (tigerPlayer->IsMovable(tigerPos[i]-direction[k], tigerPos[i])))
+            {
+                tigerPlayer->TigerLogic(tigerPos[i]-direction[k], tigerPos[i]);
+                tigerPos[i] = tigerPos[i]-direction[k];
+                return true;
+            }
+        }
+    }
+	
+	find odd points
+	find corner
+	distance of odd point from corner
+	shortest distance wins
+	
+	for (int i = 1; i < 26; i++)//check each point to find the location of the tigers
+    {
+        if (board->point[i].GetState() == T)
+        {
+            MoveCheck(i, 1, tigerMoves);//check for horizontal
+
+            if (i % 2 != 0)//diagonal motion cannot be from even points
+            {
+                for (int j = 4; j < 7; j++)
+                {
+                    MoveCheck(i, j, tigerMoves);//check for vertical and diagonal
+                }
+            }
+
+            else//at even points, does not check for diagonal motion
+            {
+                MoveCheck(i, 5, tigerMoves); //check for vertical only
+            }
+        }
+    }//end of big for loop
+    
+	generate each node using minimax.
+	generate an initial board position.
+	edit it with the moves when each node is called
+	change it back when the node returns.	
+	each node must have a boardposition
+	generate a list of possible moves at each node using its board position, if the node is not a terminal node.
+	delete the possible moves when the node returns its value to the parent node
+	
+	int minimax(boardposition, movewhich led to this node, depth, alpha, beta)
+	{
+		if (depth is searchdepth or wincheck is true at given board position)
+			return the evaluation value using the utility function
+		else
+			generate all the moves from the given boardpos
+			for each move call minimax(boardpos, move, depth, alpha, beta)
+	}
+
+void FindTigers();	
+	void AI::FindTigers()
+{
+    for (int i = 1; i < 26; i++)
+    {
+        if (board->point[i].GetState() == T)
+        {
+            tigerPlayer->tigerPos[tigerCounter] = i;
+            tigerCounter++;
+        }
+    }
+}
+
+
+bool AI::MoveToOddPoint()
+{
+    for (int i = 0; i < 4; i++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+            if ((tigerPlayer->tigerPos[i]+direction[j] < 26) && ((tigerPlayer->tigerPos[i]+direction[j]) % 2) && (tigerPlayer->IsMovable(tigerPlayer->tigerPos[i]+direction[j], tigerPlayer->tigerPos[i])))
+            {
+                tigerPlayer->TigerLogic(tigerPlayer->tigerPos[i]+direction[j], tigerPlayer->tigerPos[i]);
+                tigerPlayer->tigerPos[i] = tigerPlayer->tigerPos[i]+direction[j];
+                return true;
+            }
+
+            if ((tigerPlayer->tigerPos[i]-direction[j] > 0) && ((tigerPlayer->tigerPos[i]+direction[j]) % 2) && (tigerPlayer->IsMovable(tigerPlayer->tigerPos[i]-direction[j], tigerPlayer->tigerPos[i])))
+            {
+                tigerPlayer->TigerLogic(tigerPlayer->tigerPos[i]-direction[j], tigerPlayer->tigerPos[i]);
+                tigerPlayer->tigerPos[i] = tigerPlayer->tigerPos[i]-direction[j];
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+void AI::MakeRandomMove()
+{
+    for (int i = 0; i < 4; i++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+            if ((tigerPlayer->tigerPos[i]+direction[j] < 26) && (tigerPlayer->IsMovable(tigerPlayer->tigerPos[i]+direction[j], tigerPlayer->tigerPos[i])))
+            {
+                tigerPlayer->TigerLogic(tigerPlayer->tigerPos[i]+direction[j], tigerPlayer->tigerPos[i]);
+                tigerPlayer->tigerPos[i] = tigerPlayer->tigerPos[i]+direction[j];
+                return;
+            }
+
+            if ((tigerPlayer->tigerPos[i]-direction[j] > 0) && (tigerPlayer->IsMovable(tigerPlayer->tigerPos[i]-direction[j], tigerPlayer->tigerPos[i])))
+            {
+                tigerPlayer->TigerLogic(tigerPlayer->tigerPos[i]-direction[j], tigerPlayer->tigerPos[i]);
+                tigerPlayer->tigerPos[i] = tigerPlayer->tigerPos[i]-direction[j];
+                return;
+            }
+        }
+    }
+}
+
+bool AI::CaptureGoat()//this should take a board position and tiger positions, take co-ordinates of the proposed move as parameter.
+{
+    for (int i = 0; i < 4; i++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+            if ((tigerPlayer->tigerPos[i]+2*direction[j] < 26) && (tigerPlayer->CanCapture(tigerPlayer->tigerPos[i]+2*direction[j], tigerPlayer->tigerPos[i])))
+            {
+                tigerPlayer->TigerLogic(tigerPlayer->tigerPos[i]+2*direction[j], tigerPlayer->tigerPos[i]);
+                tigerPlayer->tigerPos[i] = tigerPlayer->tigerPos[i]+2*direction[j];
+                return true;
+            }
+
+            if ((tigerPlayer->tigerPos[i]-2*direction[j] > 0) && (tigerPlayer->CanCapture(tigerPlayer->tigerPos[i]-2*direction[j], tigerPlayer->tigerPos[i])))
+            {
+                tigerPlayer->TigerLogic(tigerPlayer->tigerPos[i]-2*direction[j], tigerPlayer->tigerPos[i]);
+                tigerPlayer->tigerPos[i] = tigerPlayer->tigerPos[i]-2*direction[j];
+                return true;
+            }
+        }
+    }
+
+    return false;
+}
+
+bool AI::ThreatenGoat()
+{
+    if (FindUnprotectedGoats(ugPos))
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            for (int j = 0; j < 4; j++)
+            {
+                if (UgDir[j] == true && (ugPos - direction[j] > 0) && (tigerPlayer->IsMovable(ugPos - direction[j], tigerPlayer->tigerPos[i])))
+                {
+                    tigerPlayer->TigerLogic(ugPos - direction[j], tigerPlayer->tigerPos[i]);
+                    tigerPlayer->tigerPos[i] = ugPos - direction[j];
+                    UgDir[j] = false;
+                    return true;
+                }
+
+                if ((UgDir[j] == true && (ugPos + direction[j]) < 26) && (tigerPlayer->IsMovable(ugPos + direction[j], tigerPlayer->tigerPos[i])))
+                {
+                    tigerPlayer->TigerLogic(ugPos + direction[j], tigerPlayer->tigerPos[i]);
+                    tigerPlayer->tigerPos[i] = ugPos + direction[j];
+                    UgDir[j] = false;
+                    return true;
+                }
+            }
+        }
+    }
+    return false;
+}
+
+bool AI::MoveTowardsCorner()//take a gamestate, take co-ordinates of the proposed move, see if that move reduces the distance towards the corner.
+{
+    int temp[4] = {100, 100, 100, 100};
+    int dir, bestTiger = 0, bestDir = 0;
+    bool positive = false;
+    bool negative = false;
+    bool foundMove = false;
+
+    for (int i = 0; i < 4; i++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+            if (tigerPlayer->tigerPos[i] != corner[i])
+            {
+                if (tigerPlayer->tigerPos[i] - direction[j] > 0
+                    && tigerPlayer->IsMovable(tigerPlayer->tigerPos[i] - direction[j], tigerPlayer->tigerPos[i])
+                    && abs(tigerPlayer->tigerPos[i] - direction[j] - corner[i]) < temp[i])
+                {
+                    temp[i] = abs(tigerPlayer->tigerPos[i] - direction[j] - corner[i]);
+                    dir = j;
+
+                    negative = true;
+                    positive = false;
+                }
+
+
+                if (tigerPlayer->tigerPos[i] + direction[j] < 26
+                    && tigerPlayer->IsMovable(tigerPlayer->tigerPos[i] + direction[j], tigerPlayer->tigerPos[i])
+                    && abs(tigerPlayer->tigerPos[i] + direction[j] - corner[i]) < temp[i])
+                {
+                    temp[i] = abs(tigerPlayer->tigerPos[i] + direction[j] - corner[i]);
+                    dir = j;
+
+                    negative = false;
+                    positive = true;
+                }
+            }
+        }
+
+        if (temp[i] <= temp[bestTiger] && (positive || negative))
+        {
+            bestTiger = i;
+            bestDir = dir;
+            foundMove = true;
+        }
+    }
+
+    if (foundMove == false)
+    {
+        return false;
+    }
+
+    if (negative)
+    {
+        tigerPlayer->TigerLogic(tigerPlayer->tigerPos[bestTiger] - direction[bestDir], tigerPlayer->tigerPos[bestTiger]);
+        tigerPlayer->tigerPos[bestTiger] = tigerPlayer->tigerPos[bestTiger] - direction[bestDir];
+    }
+    else
+    {
+        tigerPlayer->TigerLogic(tigerPlayer->tigerPos[bestTiger] + direction[bestDir], tigerPlayer->tigerPos[bestTiger]);
+        tigerPlayer->tigerPos[bestTiger] = tigerPlayer->tigerPos[bestTiger] + direction[bestDir];
+    }
+
+    return true;
+}
+
+
+bool AI::FindUnprotectedGoats(int & ug)
+{
+    ug = 0;
+    for (int i = 1; i < 26; i++)
+    {
+        if (board->point[i].GetState() == G)
+        {
+            for (int j = 0; j < 4; j++)
+            {
+                if ((i + direction[j] < 26) && (i - direction[j] > 0))
+                {
+                    if((board->point[i + direction[j]].GetState() == N)
+                       && (board->point[i - direction[j]].GetState() == N)
+                       && tigerPlayer->IsMovable(i + direction[j], i)//to prevent points across edges being considered.
+                       && tigerPlayer->IsMovable(i - direction[j], i))
+                    {
+                        ug = i;
+                        UgDir[j] = true;
+                    }
+                }
+            }
+        }
+
+        if (ug != 0)
+            return true;
+    }
+    return false;
+}
+
+void AI::MakeMove()
+{
+    if (!CaptureGoat())
+    {        
+        if(!ThreatenGoat())
+        {      
+            if (!MoveTowardsCorner())
+            {      
+                if (!MoveToOddPoint())
+                {      
+                    MakeRandomMove();       
+                }
+            }
+        }
+    }
+}
+
+bool CaptureGoat();
+bool ThreatenGoat();
+bool MoveTowardsCorner();
+bool MoveToOddPoint();
+void MakeRandomMove();
+bool FindUnprotectedGoats(int & ugPos);
+
+
+for (int j = 0; j < 4; j++)
+                {
+
+                    MoveCheck(i, direction[0], move, counter);//horizontal
+                    MoveCheck(i, direction[2], move, counter);//vertical
+
+                    if (i % 2 != 0)//diagonal check from odd points
+                    {
+                        MoveCheck(i, direction[1], move, counter);
+                        MoveCheck(i, direction[3], move, counter);
+                    }
+
+                }
+            }
+        }
+    }
+	
+//bool AI::AI_GoatWinCheck(const BoardPosition & b)
+//{
+//    int validMoves = 0;
+//
+//    for (int i = 0; i < 4; i++)
+//    {
+//        AI_MoveCheck(b, b.tempTigerPos[i], direction[0], validMoves);
+//        AI_MoveCheck(b, b.tempTigerPos[i], direction[2], validMoves);
+//
+//        if (b.tempTigerPos[i] % 2 != 0)
+//        {
+//            AI_MoveCheck(b, b.tempTigerPos[i], direction[1], validMoves);
+//            AI_MoveCheck(b, b.tempTigerPos[i], direction[3], validMoves);
+//        }
+//    }
+//
+//    if (!validMoves)
+//        return true;
+//
+//    return false;
+//}
+
+//x is tigerpos, y is direction
+//bool AI::AI_MoveCheck(const BoardPosition & b, int x, int y, int moveFrom[], int moveTo[], int & counter)
+//{
+//    bool moveExists = false;
+//    Move m;
+//
+//    //so as not to check unnecessary points
+//    if (x+y > 0 && x+y < 26)
+//    {
+//        m.from = x;
+//        m.to = x + y;
+//
+//        if (AI_IsMovable(b, m))
+//        {
+//            moveFrom[counter] = m.from;
+//            moveTo[counter] = m.to;
+//            counter++;
+//            moveExists = true;
+//        }
+//    }
+//
+//    if (x-y > 0 && x-y < 26)
+//    {
+//        m.from = x;
+//        m.to = x - y;
+//
+//        if (AI_IsMovable(b, m))
+//        {
+//            moveFrom[counter] = m.from;
+//            moveTo[counter] = m.to;
+//            counter++;
+//            moveExists = true;
+//        }
+//    }
+//
+//    //capture conditions
+//    if (b.turn == Tiger)
+//    {
+//        if (x+2*y > 0 && x+2*y < 26)
+//        {
+//            m.from = x;
+//            m.to = x + 2*y;
+//
+//            if (AI_CanCapture(b, m))
+//            {
+//                moveFrom[counter] = m.from;
+//                moveTo[counter] = m.to;
+//                counter++;
+//                moveExists = true;
+//            }
+//        }
+//
+//        if (x-2*y > 0 && x-2*y < 26)
+//        {
+//            m.from = x;
+//            m.to = x - 2*y;
+//
+//            if (AI_CanCapture(b, m))
+//            {
+//                moveFrom[counter] = m.from;
+//                moveTo[counter] = m.to;
+//                counter++;
+//                moveExists = true;
+//            }
+//        }
+//    }
+//    return moveExists;
+//}
+
+bool AI::AI_CanCapture(const BoardPosition & b, const Move & move)
+{
+    if (
+//            (b.pnt[move.from].state) == T)
+//            &&
+            (b.pnt[move.to].state == N)
+            &&
+            (
+                //horizontal
+                ((abs(b.pnt[move.to].x - b.pnt[move.from].x) == 2) && (abs(b.pnt[move.to].y - b.pnt[move.from].y) == 0)) ||
+                //vertical
+                ((abs(b.pnt[move.to].y - b.pnt[move.from].y) == 2) && (abs(b.pnt[move.to].x - b.pnt[move.from].x) == 0)) ||
+                //diagonal
+                ((move.from % 2 !=0) && (abs(b.pnt[move.to].y - b.pnt[move.from].y) == 2) && (abs(b.pnt[move.to].x - b.pnt[move.from].x) == 2))
+             )
+            &&
+            (b.pnt[(move.to + move.from) / 2].state == G)
+        )
+
+    {
+        return true;
+    }
+
+    else
+    {
+        return false;
+    }
+
+}
+
+bool AI::AI_IsMovable(const BoardPosition & b, const Move & move)
+{
+    if (
+            (b.pnt[move.to].state == N)
+            &&
+            (
+                //horizontal
+                ((abs(b.pnt[move.to].x - b.pnt[move.from].x) == 1) && (abs(b.pnt[move.to].y - b.pnt[move.from].y) == 0)) ||
+                //vertical
+                ((abs(b.pnt[move.to].y - b.pnt[move.from].y) == 1) && (abs(b.pnt[move.to].x - b.pnt[move.from].x) == 0)) ||
+                //diagonal
+                ((move.from % 2 !=0) && (abs(b.pnt[move.to].y - b.pnt[move.from].y) == 1) && (abs(b.pnt[move.to].x - b.pnt[move.from].x) == 1))
+             )
+        )
+    {
+        return true;
+    }
+
+    else
+    {
+        return false;
+    }
+}
+
+//int evaluatePosition(gamestate)
+//check for game over
+//if bagh wins return -inf
+//if bakhra wins return +inf
+
+// evaluates the current board position
+//int evaluate_position(char _board[9], player _player) {
+//	check_game_state(_board);
+//	if(game_over()) {
+//		if((state == XWIN && _player.symbol == 'X') ||
+//			(state == OWIN && _player.symbol == 'O')) {
+//			return +INFINITY;
+//		} else if((state == XWIN && _player.symbol == 'O') ||
+//			(state == OWIN && _player.symbol == 'X')) {
+//			return -INFINITY;
+//		} else if(state == DRAW) {
+//			return 0;
+//		}
+//	}
+//	return -1;
+//}
+
+
+//int AI::EvaluatePosition()
+//{
+//    if (tigerPlayer->WinCheck() && flags->winner == Tiger)
+//        return +INF;
+//    else if (tigerPlayer->WinCheck() && flags->winner == Goat)
+//        return -INF;
+//    else if (CaptureGoat())
+//        return 1000;
+//    else if(MoveTowardsCorner())
+//        return 500;
+//    else
+//        return 100;
+//}
+
+
+
+            if (!done)
+            {
+                flags->dbg = move[i].to;
+                flags->dbgFrom = move[i].from;
+                done = true;
+            }
+
+			
+            if (!done)
+            {
+                flags->dbg = move[i].to;
+                flags->dbgFrom = move[i].from;
+                done = true;
+            }
+			
+			
+            if (!done)
+            {
+                flags->dbg = max;
+                done = true;
+            }
+			
+//minimax
+//generate all valid moves for a given board position--done
+//loop until all these moves have been checked--done
+/*
+check the position after each move using evaluate position
+if the returned value is more optimal than the current value in BestVal, update
+
+Minmove function
+finds the best move for the min player
+
+posval=evaluateposition
+if posval has value of either player win, return
+set bestval to plus infinity
+find all the valid moves
+loop for each valid move
+call maxmove from within the loop
+update bestval
+int val = MaxMove(_board, _player);
+		if(val < best_val) {
+			best_val = val;
+
+finally return the best val
+
+Maxmove function
+finds the best move for the min player
+
+exactly the same as above, except all values are reversed.
+if(val > best_val) {
+			best_val = val;
+
+*/
+
+
+
+//int AI::MinMove()
+//{
+////choose the minimum of the child nodes
+//    return 0;
+//}
+//
+//int AI::MaxMove()
+//{
+////choose the maximum of the child nodes
+//    return 0;
+//}
+
+//int AI::MiniMax(Move move, int depth, int alpha, int beta)
+//{
+//    int alpha = -INF;
+//    int beta = +INF;
+//
+//    if (depth == searchDepth)
+//MiniMax
+//
+//The game as represented as a tree where the nodes represent the current position and the arcs represent moves.
+//Since players take turns, successive nodes represent positions where different players must move.
+//We call the nodes MAX or MIN nodes depending of who is the player that must move at that node.
+//A game tree could be infinite.
+//The leaves represent terminal positions, i.e. positions where MAX wins (score: +infinity) or MIN wins (score: -infinity).
+//The ply of a node is the number of moves needed to reach that node (i.e. arcs from the root of the tree).
+//The ply of a tree is the maximum of the plies of its nodes.
+//
+//function MINIMAX(N) is
+//	begin
+//	   if N is a leaf then
+//	        return the estimated score of this leaf
+//	   else
+//	        Let N1, N2, .., Nm be the successors of N;
+//	        if N is a Min node then
+//		    return min{MINIMAX(N1), .., MINIMAX(Nm)}
+//	        else
+//		    return max{MINIMAX(N1), .., MINIMAX(Nm)}
+//	end MINIMAX;
+//
+//if (depth == 4)
+//    return score;
+//else if (depth % 2 == 0)
+//    return MiniMax(depth - 2);
+//else
+//    return MiniMax(depth - 2);
+//
+//ALPHA value of a node
+//
+//It is a value never greater than the true score of this node.
+//Initially it is the score of that node, if the node is a leaf, otherwise it is -infinity.
+//Then at a MAX node it is set to the largest of the scores of its successors explored up to now, and at a MIN node to the alpha value of its predecessor.
+//BETA value of a node
+//
+//It is a value never smaller than the true score of this node. Initially it is the score of that node, if the node is a leaf, otherwise it is +infinity.
+//Then at a MIN node it is set to the smallest of the scores of its successors explored up to now, and at a MAX node to the beta value of its predecessor.
+//It Is Guaranteed That:
+//
+//The score of a node will always be no less than the alpha value and no greater than the beta value of that node.
+//As the algorithm evolves, the alpha and beta values of a node may change, but the alpha value will never decrease, and the beta value will never increase.
+//When a node is visited last, its score is set to the alpha value of that node, if it is a MAX node, otherwise it is set to the beta value.
+//
+//function MINIMAX-AB(N, A, B) is ;; Here A is always less than B
+//	begin
+//	   if N is a leaf then
+//	        return the estimated score of this leaf
+//	   else
+//		Set Alpha value of N to -infinity and
+//                    Beta value of N to +infinity;
+//	        if N is a Min node then
+//	            For each successor Ni of N loop
+//		       Let Val be MINIMAX-AB(Ni, A, Min{B,Beta of N});
+//		       Set Beta value of N to Min{Beta value of N, Val};
+//		       When A >= Beta value of N then
+//			   Return Beta value of N endloop;
+//                    Return Beta value of N;
+//	        else
+//	            For each successor Ni of N loop
+//		       Let Val be MINIMAX-AB(Ni, Max{A,Alpha value of N}, B);
+//		       Set Alpha value of N to Max{Alpha value of N, Val};
+//		       When Alpha value of N >= B then
+//			  Return Alpha value of N endloop;
+//		    Return Alpha value of N;
+//	end MINIMAX-AB;
+//
+//Starting the Game
+//
+//At the start of the game, the MINIMAX-AB function is called with the following parameters:
+//the root of the game tree
+//-infinity (-I) as alpha value
+//+infinity (+I) as beta value
+//    return 0;
+//}
+
+
+
+    if (!done)
+    {
+        flags->dbg = counter;
+        flags->dbgFrom = move[4].from;
+        done = true;
+    }
+
+    //ai->AITimer.Reset();
+    //ai->SlowDownAIMove();
+    //flags.dbg = ++counter;
+    //ai->PrintBoard();
+	
+	check the minimax function using the cs notes
+	write a new evaluation function for each player
+	make new classes for the goat ai and the tiger ai
+	check the strength
+	edit the evaluation function as necessary
+	
+	5000*aideadgoats - 300*tigerstrapped + 400*cancapture + 200*cornersoccupied + 100*movetooddpoint;
+	  12345678910
+	1 Vrythramax
+	2 bikermangt
+	3 ovsuehprom
+	4 nrvecaxius
+	5 deanhillso 
+	6 iocalhouni 	
+	7 nmathiausl
+	8 gurditplle
+	9 sretsalbgh
+   10 animalindi
+	
+	
+	Vrythramax
+	.........t
+	.........m
+	
+	tidruGindi
+	
+	bondings 
+	rvec
+	caxius
+	
+	
+	vrythramax
+	rvec
+	josso
+	deanhills
+	bondings
+	bikerman
+	ocalhoun
+	mathiaus
+	blaster
+	morpheus
+	animal 
+	adri
+	tidrug
+	indi
+	helios
+	mtx
+	
+1	deanhills	
+2	bondings	
+3	bikerman	
+4	ocalhoun	
+5	tidrug	
+6	blaster	
+7	rvec	
+8	mathiaus	
+9	vrythramax	
+10	helios---->column 10
+11	animal 	
+12	morpheus	
+13	s3nd k3ys	
+14	indi	
+15	mtx---->column 10
+16	caxius---->column 9
+
+	
+	
+	mathiaus..
+	animaladri
+	.obikerman
+	.sllihnaed
+	tidruGindi
+	Vrythramax
+	
+	
+	deanhillsi
+	bondingsdm
+	.tidrugn.t
+	..mathiaux	
+	ocalhounmm
+	helios..a.
+	bikermankn
+	blaster.ao 
+	rveccaxius
+	xamarhtyrv
+	
+	indi
+	maka
+	
+	
+	
+	
+	 
+	rvec......
+	tidrug....	
+	helios....
+	blaster.ha
+	mathiausen
+	bondingsli
+	bikermanim
+	ocalhounoa
+	deanhillsl
+	caxiusindi
+	
+deanhills
+bondings
+bikerman
+ocalhoun
+tidrug
+blaster 
+rvec
+mathiaus
+Vrythramax
+helios 
+animal
+indi
+adri
+
+
+
+	
+	
+
+	
+	
+	_ _ s o i l e h _ _
+	r v e c _ _ _ _ _ _
+	s d e a n h i l l s
+	_ _ _ l a n i m a l
+	_ _ _ h m _ t _ _ _
+	_ _ _ o r _ i _ _ _
+	_ _ _ u e _ d _ _ _
+	_ _ _ n k _ r _ _ _
+	m a t h i a u s _ _
+	_ _ _ _ b _ g _ _ _
+	
+
+  
+deanhills. deanhills
+a....t..g. 
+r...i...n. 
+k..d....i. 
+e.r.....d. 
+au......n. 
+gnuohlaco. 
+l.......b. 
+e......... 
+bikerman..
+
+deanhills
+
+
+    if (aiDeadGoats > flags->deadGoats)
+        return -5000;
+    if (cornersOccupied > tempCornersOccupied)
+        return -500;
+    return 100;
+	
+	
+	working ai
+	
+	
+int AI::GoatMiniMax(int depth)
+{
+    int max = -INF;
+    int min = INF;
+
+    int posVal = GoatEvaluatePosition();
+
+    if (depth == searchDepth || posVal == INF || posVal == -INF || posVal == 5000)
+    {
+        return posVal;
+    }
+
+    int counter = 0;
+    Move move[21];
+
+    GenerateMoveList(counter, move);
+    static int done = 0;
+    if (done == 2)
+    {
+        PrintBoard();
+        for (int i = 0; i < counter; i++)
+        {
+            cout << move[i].from << " " << move[i].to << " " << move[i].type << endl;
+        }
+    }
+    done++;
+
+    int val, tempTigerPos;
+    bool cornerMoved = false;
+
+    for (int i = 0; i < counter; i++)
+    {
+        switch(move[i].type)
+        {
+            case TIGER_CAPTURE:
+
+            board->point[move[i].to].SetState(T);
+            board->point[(move[i].to + move[i].from)/2].SetState(N);
+            board->point[move[i].from].SetState(N);
+
+            for (int k = 0; k < 4; k++)
+            {
+                if (aiTigerPos[k] == move[i].from)
+                {
+                    aiTigerPos[k] = move[i].to;
+                    tempTigerPos = k;
+                    break;
+                }
+            }
+            aiTurn = Goat;
+            aiDeadGoats++;
+
+            val = GoatMiniMax(depth + 1);
+
+            if (val <= min)
+            {
+                min = val;
+                if (depth == 0)
+                {
+                    moveFrom = move[i].from;
+                    moveTo = move[i].to;
+                }
+            }
+
+            board->point[move[i].to].SetState(N);
+            board->point[(move[i].to + move[i].from)/2].SetState(G);
+            board->point[move[i].from].SetState(T);
+
+            aiTigerPos[tempTigerPos] = move[i].from;
+            aiDeadGoats--;
+            aiTurn = Tiger;
+            //return max;
+            break;
+
+
+            case TIGER_MOVE:
+
+            board->point[move[i].to].SetState(T);
+            board->point[move[i].from].SetState(N);
+            for (int j = 0; j < 4; j++)
+            {
+                if (aiTigerPos[j] == move[i].from)
+                {
+                    aiTigerPos[j] = move[i].to;
+                    tempTigerPos = j;
+                    break;
+                }
+            }
+            aiTurn = Goat;
+
+            for (int y = 0; y < 4; y++)
+            {
+                if(move[i].to == corner[y])
+                {
+                    cornersOccupied++;
+                    cornerMoved = true;
+                }
+            }
+
+            val = GoatMiniMax(depth + 1);
+
+            if (val <= min)
+            {
+                min = val;
+                if (depth == 0)
+                {
+                    moveFrom = move[i].from;
+                    moveTo = move[i].to;
+                }
+            }
+
+            board->point[move[i].from].SetState(T);
+            board->point[move[i].to].SetState(N);
+            aiTigerPos[tempTigerPos] = move[i].from;
+            aiTurn = Tiger;
+            if (cornerMoved)
+            {
+                cornersOccupied--;
+                cornerMoved = false;
+            }
+            break;
+
+            case GOAT_PLACE:
+            board->point[move[i].to].SetState(G);
+            aiGoatsToBePlaced--;
+            aiTurn = Tiger;
+
+            val = GoatMiniMax(depth + 1);
+
+            if (val >= max)
+            {
+                max = val;
+                if (depth == 0)
+                {
+                    moveFrom = move[i].from;
+                    moveTo = move[i].to;
+                }
+            }
+
+            aiGoatsToBePlaced++;
+            board->point[move[i].to].SetState(N);
+            aiTurn = Goat;
+            break;
+
+            case GOAT_MOVE:
+            board->point[move[i].to].SetState(G);
+            board->point[move[i].from].SetState(N);
+            aiTurn = Tiger;
+
+            val = GoatMiniMax(depth + 1);
+
+            if (val >= max)
+            {
+                max = val;
+                if (depth == 0)
+                {
+                    moveFrom = move[i].from;
+                    moveTo = move[i].to;
+                }
+            }
+
+            board->point[move[i].to].SetState(N);
+            board->point[move[i].from].SetState(G);
+            aiTurn = Goat;
+            break;
+        }
+    }
+
+    if (aiTurn == Goat)
+    return max;
+    else
+    return min;
+}
+
+board position:
+
+aideadgoats
+goatstobeplaced
+cornersoccupied
+...
+
+posval = 
+
+depth = x
+
+move list
+
+move[0] = ...
+move[1] = ...
+....
+
+processing move[x]:
+move type = sth
+
+move made
+minimax called...
+.....
+.....
+move reverted
+Board Position
+
+//        // Display the playing position
+//        std::cout << "\rPlaying... " << std::fixed << std::setprecision(2) << sound.GetPlayingOffset() << " sec";
+//
+//        // Leave some CPU time for other threads
+//        Sleep(0.1f);
+
+
+
+//    static int done = 0;
+//    if (done == 2)
+//    {
+////        ////ofile<<"Depth = "<<depth<<endl<<endl;
+//        PrintBoard();
+//        for (int i = 0; i < counter; i++)
+//        {
+//            ////ofile << move[i].from << " " << move[i].to << " " << move[i].type << endl;
+//        }
+//         ////ofile<< endl << endl;
+//    }
+//    done++;
+
+
+//change how drawLastMove works.--done
+//implement the non-repetition rule. --done
+//implement minimax step by step.--done
+//add the main menu -- done
+//add sound -- done
+//add difficulty level -- done
+//make program more efficient -- done. (It now consumes much less CPU, but this step is to be done again at the end)
+
+//for goat, if a goat has to be lost, let it be lost as late as possible.
+//for tiger, make the tigers stay as close to their respective corners as possible.
+//available number of moves might be a factor
+
+//#include <cmath>//for abs, pow and sqrt
+
+//    Debugger.SetText("Debug: " + debug);
+//    App.Draw(Debugger);
+//
+//    DebuggerFrom.SetText("DebugFrom: " + debugFrom);
+//    App.Draw(DebuggerFrom);
+
+    Debugger.SetPosition(boardX+boardWidth+100, 0);
+    DebuggerFrom.SetPosition(boardX+boardWidth+100,50);
+
+	    ConvertToString(debug, flags->dbg);
+    ConvertToString(debugFrom, flags->dbgFrom);    ConvertToString(debug, flags->dbg);
+    ConvertToString(debugFrom, flags->dbgFrom);
+	
+	//                mainMenu.mState = NORMAL;
+//                mainMenu.nState = NBASE;
+//                mainMenu.cState = CBASE;
+//                mainMenu.lState = LBASE;
+//                flags.mainMenuOn = true;
+//
+//                flags.turn = Goat;
+//                flags.keyPressed = false;
+//                flags.highlightIsDrawn = false;
+//                flags.drawLastMove = false;
+//                flags.selectPressed = false;
+//                flags.isPosRepeated = false;
+//                flags.drawRepeatText = false;
+//                flags.drawInvalidMove = false;
+//                flags.aiThinking = false;
+//                flags.isPlaying = true;
+//                flags.goatAIActive = false;
+//                flags.tigerAIActive = false;
+//                flags.goatsToBePlaced = 20;
+//                flags.deadGoats = 0;
+//                flags.selectorPoint = 13;
+//
+//                board.Reset();
+//                flags.mainMenuOn = true;
+
+//                break;
+//ai->SlowDownAIMove();
+
+    //thinking message
+//    texts->DisplayThinkingMessage(App);
+
+   for (int i = 0; i < counter; i++)
+    {
+        switch(move[i].type)
+        {
+            case TIGER_CAPTURE:
+            TigerCapture(move[i], tempTigerPos, cornerMoved, cornerLeft);
+
+            val = TigerMiniMax(depth + 1, alpha, beta);
+
+            if (val > alpha)
+            {
+                alpha = val;
+                if (depth == 0)
+                {
+                    moveFrom = move[i].from;
+                    moveTo = move[i].to;
+                }
+            }
+
+            RevertTigerCapture(move[i], tempTigerPos, cornerMoved, cornerLeft);
+
+            if (alpha >= beta)
+            {
+                ofile << "alpha = " << alpha << "beta = " << beta << endl;
+                ofile << "Pruned with: " << beta << endl;
+                return alpha;
+            }
+
+            break;
+
+
+            case TIGER_MOVE:
+            TigerMove(move[i], tempTigerPos, cornerMoved, cornerLeft);
+
+            val = TigerMiniMax(depth + 1, alpha, beta);
+
+            if (val > alpha)
+            {
+                alpha = val;
+                if (depth == 0)
+                {
+                    moveFrom = move[i].from;
+                    moveTo = move[i].to;
+                }
+            }
+
+            RevertTigerMove(move[i], tempTigerPos, cornerMoved, cornerLeft);
+
+            if (alpha >= beta)
+            {
+                ofile << "alpha = " << alpha << "beta = " << beta << endl;
+                ofile << "Pruned with: " << beta << endl;
+                return alpha;
+            }
+
+            break;
+
+            case GOAT_PLACE:
+            GoatPlace(move[i]);
+
+            val = TigerMiniMax(depth + 1, alpha, beta);
+
+            if (val < beta)
+            {
+                beta = val;
+            }
+
+            RevertGoatPlace(move[i]);
+
+            if (alpha >= beta)
+            {
+                ofile << "alpha = " << alpha << "beta = " << beta << endl;
+                ofile << "Pruned with: " << beta << endl;
+                return beta;
+            }
+
+            break;
+
+            case GOAT_MOVE:
+            GoatMove(move[i]);
+
+            val = TigerMiniMax(depth + 1, alpha, beta);
+
+            if (val < beta)
+            {
+                beta = val;
+            }
+
+            RevertGoatMove(move[i]);
+
+            if (alpha >= beta)
+            {
+                ofile << "alpha = " << alpha << "beta = " << beta << endl;
+                ofile << "Pruned with: " << alpha << endl;
+                return beta;
+            }
+            break;
+        }
+    }
+
+	// + 50 * cornersOccupied);// + 20 * cornersOccupied + 40 * PossibleCaptures() + 10 * MovableToCorner());
+	
+	840+92+18+19+38+52+22+14+53+27+26+27+18+55+35+19+45+28+18+51+276+33+30+581+79+67+31+23+203+106+91+10+216
+	
+	
+	
+	void Sprites::DrawMainMenuSprite(RenderWindow & App)
+{
+    App.Draw(Menu);
+
+    switch (mainMenu->mState)
+    {
+        case NORMAL:
+//        switch (mainMenu->nState)
+//        {
+//            case NBASE:
+            App.Draw(mmGoat.sprt);
+            App.Draw(mmTiger.sprt);
+            App.Draw(mmHuman.sprt);
+            App.Draw(mmExit.sprt);
+            App.Draw(mmCredits.sprt);
+            break;
+
+//            case C_GOAT:
+//            Menu.SetImage(img.mmGoat);
+//            break;
+//
+//            case C_TIGER:
+//            Menu.SetImage(img.mmTiger);
+//            break;
+//
+//            case HUMAN:
+//            Menu.SetImage(img.mmHuman);
+//            break;
+//
+//            case EXIT:
+//            Menu.SetImage(img.mmExit);
+//            break;
+//
+//            case NCREDITS:
+//            Menu.SetImage(img.mmCredits);
+//            break;
+//        }
+        break;
+
+        case CREDITS:
+//        switch(mainMenu->cState)
+//        {
+//            case CBASE:
+//            Menu.SetImage(img.credits);
+//            break;
+//
+//            case HIGHLIGHT:
+//            Menu.SetImage(img.creditsHighlight);
+//            break;
+//        }
+        App.Draw(mmCreditsText.sprt);
+        App.Draw(mmBack.sprt);
+        break;
+
+        case LEVELS:
+//        switch (mainMenu->lState)
+//        {
+//            case LBASE:
+//            Menu.SetImage(img.lbase);
+//            break;
+//
+//            case L1:
+//            Menu.SetImage(img.l1);
+//            break;
+//
+//            case L2:
+//            Menu.SetImage(img.l2);
+//            break;
+//
+//            case L3:
+//            Menu.SetImage(img.l3);
+//            break;
+//
+//            case L4:
+//            Menu.SetImage(img.l4);
+//            break;
+//
+//            case L5:
+//            Menu.SetImage(img.l5);
+//            break;
+//        }
+        App.Draw(l1.sprt);
+        App.Draw(l2.sprt);
+        App.Draw(l3.sprt);
+        App.Draw(l4.sprt);
+        App.Draw(l5.sprt);
+        break;
+
+        case GAME:
+        break;
+    }
+}
+
+void MainMenu::Initialize()
+{
+    mState = NORMAL;
+    nState = NBASE;
+    cState = CBASE;
+    lState = LBASE;
+
+    //normal zones
+    //goat
+    NormalZone[0].low_x = xFactor * 40;
+    NormalZone[0].high_x = xFactor * 1350;
+    NormalZone[0].low_y = yFactor * 385;
+    NormalZone[0].high_y = yFactor * 440;
+
+    //tiger
+    NormalZone[1].low_x = xFactor * 40;
+    NormalZone[1].high_x = xFactor * 1350;
+    NormalZone[1].low_y = yFactor * 480;
+    NormalZone[1].high_y = yFactor * 540;
+
+    //human
+    NormalZone[2].low_x = xFactor * 240;
+    NormalZone[2].high_x = xFactor * 1150;
+    NormalZone[2].low_y = yFactor * 570;
+    NormalZone[2].high_y = yFactor * 630;
+
+    //exit
+    NormalZone[3].low_x = xFactor * 20;
+    NormalZone[3].high_x = xFactor * 150;
+    NormalZone[3].low_y = yFactor * 660;
+    NormalZone[3].high_y = yFactor * 710;
+
+    //credits
+    NormalZone[4].low_x = xFactor * 1100;
+    NormalZone[4].high_x = xFactor * 1350;
+    NormalZone[4].low_y = yFactor * 660;
+    NormalZone[4].high_y = yFactor * 710;
+
+    //credits zone
+    CreditsZone.low_x = xFactor * 60;
+    CreditsZone.high_x = xFactor * 230;
+    CreditsZone.low_y = yFactor * 680;
+    CreditsZone.high_y = yFactor * 720;
+
+    int height = yFactor * 52;
+    int width = xFactor * 305;
+    int vGap = yFactor * 47;//vertical gap
+    int startHeight = yFactor * 272;
+    int startWidth = xFactor * 535;
+    int dHeight = vGap + height;//difference in height
+
+    //level zones
+    LevelZone[0].low_x = startWidth;
+    LevelZone[0].high_x =  startWidth + width;
+    LevelZone[0].low_y = startHeight;
+    LevelZone[0].high_y = startHeight + height;
+
+    LevelZone[1].low_x = startWidth;
+    LevelZone[1].high_x =  startWidth + width;
+    LevelZone[1].low_y = LevelZone[0].low_y + dHeight;
+    LevelZone[1].high_y = LevelZone[0].low_y + dHeight + height;
+
+    LevelZone[2].low_x = startWidth;
+    LevelZone[2].high_x =  startWidth + width;
+    LevelZone[2].low_y = LevelZone[1].low_y + dHeight;
+    LevelZone[2].high_y = LevelZone[1].low_y + dHeight + height;
+
+    LevelZone[3].low_x = startWidth;
+    LevelZone[3].high_x =  startWidth + width;
+    LevelZone[3].low_y = LevelZone[2].low_y + dHeight;
+    LevelZone[3].high_y = LevelZone[2].low_y + dHeight + height;
+
+    LevelZone[4].low_x = startWidth;
+    LevelZone[4].high_x =  startWidth + width;
+    LevelZone[4].low_y = LevelZone[3].low_y + dHeight;
+    LevelZone[4].high_y = LevelZone[3].low_y + dHeight + height;
+}
+
+
+	fix the ai.
+	fix the not responding thingy.
+	fix the mouse click thingy while playing tiger.
+	apply vector to the generate move list function instead of array.
+	apply multi-threading for thinking message and escape button. --not gonna do this, although it would probably fix the not respnding thingy as well.
+
+	embed all images into the exe. --done
+	apply static linking.--done
+	an awesome single exe will be created. --three dlls remain, but it's not really a problem.
+	
+	images folder
+	basic images header files.
+	main menu folder: mmbase, human vs. thingy, credits button, exit button, button highlights, credits text, back button, back button highlight: header files.
+	levels folder: all level text buttons, and highlights.
+	
+	mmbase is a sprite which is always drawn.
+	each text image is a sprite which has a bool associated with it. it is drawn only when the bool is on.
+	main menu zones are made from the text image positions and sizes.
+	
+	every time main menu state changes, it calls a function, 
+
+	paile sabai ko image unhighlighted ma set huncha
+	tespachi input le main menu state change garca
+	sprite le tei anusar image set garcha
+	image sab khate banyo!

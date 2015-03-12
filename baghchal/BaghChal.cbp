@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="BaghChal" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/BaghChal" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+				<Linker>
+					<Add option="-lsfml-graphics-s" />
+					<Add option="-lsfml-window-s" />
+					<Add option="-lsfml-system-s" />
+					<Add option="-lsfml-audio-s" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/BaghChal" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+			<Add option="-DSFML_STATIC" />
+			<Add directory="F:/Ashish ko folder/1.Programming/Game programming/SFML/SFML-1.6-sdk-windows-mingw - original/SFML-1.6/include" />
+		</Compiler>
+		<Linker>
+			<Add directory="F:/Ashish ko folder/1.Programming/Game programming/SFML/SFML-1.6-sdk-windows-mingw - original/SFML-1.6/lib" />
+		</Linker>
+		<Unit filename="AI.cpp" />
+		<Unit filename="AI.h" />
+		<Unit filename="ActiveZone.cpp" />
+		<Unit filename="ActiveZone.h" />
+		<Unit filename="Board.cpp" />
+		<Unit filename="Board.h" />
+		<Unit filename="Flags.h" />
+		<Unit filename="Game.cpp" />
+		<Unit filename="Game.h" />
+		<Unit filename="GameState.cpp" />
+		<Unit filename="GameState.h" />
+		<Unit filename="Headers.h" />
+		<Unit filename="ImgManager.cpp" />
+		<Unit filename="ImgManager.h" />
+		<Unit filename="Input.cpp" />
+		<Unit filename="Input.h" />
+		<Unit filename="MainMenu.cpp" />
+		<Unit filename="MainMenu.h" />
+		<Unit filename="MyPlayer.cpp" />
+		<Unit filename="MyPlayer.h" />
+		<Unit filename="MyPoint.cpp" />
+		<Unit filename="MyPoint.h" />
+		<Unit filename="Resources.rc">
+			<Option compilerVar="WINDRES" />
+		</Unit>
+		<Unit filename="Sound.cpp" />
+		<Unit filename="Sound.h" />
+		<Unit filename="Sprites.cpp" />
+		<Unit filename="Sprites.h" />
+		<Unit filename="Text.cpp" />
+		<Unit filename="Text.h" />
+		<Unit filename="fonts/cheeseburger.h" />
+		<Unit filename="goat.cpp" />
+		<Unit filename="goat.h" />
+		<Unit filename="images/background.h" />
+		<Unit filename="images/board.h" />
+		<Unit filename="images/goat.h" />
+		<Unit filename="images/lastmove.h" />
+		<Unit filename="images/mainMenu/back.h" />
+		<Unit filename="images/mainMenu/backH.h" />
+		<Unit filename="images/mainMenu/credits.h" />
+		<Unit filename="images/mainMenu/creditsH.h" />
+		<Unit filename="images/mainMenu/creditsText.h" />
+		<Unit filename="images/mainMenu/exit.h" />
+		<Unit filename="images/mainMenu/exitH.h" />
+		<Unit filename="images/mainMenu/humanVsGoat.h" />
+		<Unit filename="images/mainMenu/humanVsGoatH.h" />
+		<Unit filename="images/mainMenu/humanVsTiger.h" />
+		<Unit filename="images/mainMenu/humanVsTigerH.h" />
+		<Unit filename="images/mainMenu/humanVshuman.h" />
+		<Unit filename="images/mainMenu/humanVshumanH.h" />
+		<Unit filename="images/mainMenu/levels/l1.h" />
+		<Unit filename="images/mainMenu/levels/l1H.h" />
+		<Unit filename="images/mainMenu/levels/l2.h" />
+		<Unit filename="images/mainMenu/levels/l2H.h" />
+		<Unit filename="images/mainMenu/levels/l3.h" />
+		<Unit filename="images/mainMenu/levels/l3H.h" />
+		<Unit filename="images/mainMenu/levels/l4.h" />
+		<Unit filename="images/mainMenu/levels/l4H.h" />
+		<Unit filename="images/mainMenu/levels/l5.h" />
+		<Unit filename="images/mainMenu/levels/l5H.h" />
+		<Unit filename="images/mainMenu/mmbase.h" />
+		<Unit filename="images/selector.h" />
+		<Unit filename="images/selectorhighlight.h" />
+		<Unit filename="images/tiger.h" />
+		<Unit filename="images/tigerIcon.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="sounds/wood.h" />
+		<Unit filename="tiger.cpp" />
+		<Unit filename="tiger.h" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+			<envvars />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
